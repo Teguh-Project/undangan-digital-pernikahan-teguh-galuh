@@ -1,13 +1,12 @@
 :root {
-  --bg-color: #f7f5f0;
+  --bg-main: #f8f6f0;
   --card-bg: #ffffff;
   --primary-navy: #1b2a4a;
   --accent-gold: #c5a059;
-  --text-main: #333333;
+  --text-dark: #2c2c2c;
   --text-muted: #666666;
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Montserrat', sans-serif;
-  --container-width: 480px; /* Lebar maksimal tampilan undangan */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
 }
 
 * {
@@ -18,267 +17,389 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #dcd8cc; /* Warna latar belakang luar di Laptop/Desktop */
-  font-family: var(--font-body);
-  color: var(--text-main);
-  font-size: 16px;
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
 }
 
 body.is-locked {
   overflow: hidden;
+}
+
+/* CONTAINER UTAMA */
+.web-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SECTION COVER: FULLSCREEN FULL WIDTH & HEIGHT */
+.cover-hero {
+  width: 100%;
   height: 100vh;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* WAPPER UTAMA: Mengunci Tampilan Mobile Frame di Tengah Layar Laptop/Tablet */
-.invitation-container {
-  width: 100%;
-  max-width: var(--container-width);
-  background-color: var(--bg-color);
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
+  /* Ganti URL foto di bawah dengan foto pasangan Anda */
+  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
   position: relative;
-  min-height: 100vh;
-}
-
-/* SECTION COVER */
-.cover-section {
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 20px;
   text-align: center;
+  color: #ffffff;
+}
+
+/* Layer gelap transparan agar teks terbaca jelas di atas gambar */
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .cover-content {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-.cover-image-wrapper {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-.cover-img, .footer-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.guest-info {
-  margin: 10px 0;
-}
-
-.guest-label {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  color: var(--text-muted);
+.subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #f0f0f0;
   text-transform: uppercase;
 }
 
-.guest-name {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
+.title-couples {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-weight: 600;
-  margin: 6px 0 16px 0;
-  color: var(--primary-navy);
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* BUTTONS */
+.wedding-date {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  margin-bottom: 20px;
+}
+
+.guest-card {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guest-label {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.guest-name {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 6px 0 20px 0;
+  color: #ffffff;
+}
+
 .btn-open {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background-color: var(--primary-navy);
-  color: #ffffff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(27, 42, 74, 0.25);
-  transition: all 0.3s ease;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn-open:hover {
-  background-color: #121c33;
+  background-color: #b38e48;
   transform: translateY(-2px);
 }
 
-/* SECTION CONTENT */
-.content-section {
-  min-height: 100vh;
+/* MAIN CONTENT AREA */
+.main-content {
   width: 100%;
-  padding: 40px 20px;
-  background-color: var(--bg-color);
-}
-
-.content-wrapper {
+  padding: 60px 20px 100px 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  text-align: center;
+  gap: 40px;
+  align-items: center;
 }
 
-.ornament-divider {
-  color: var(--accent-gold);
-  font-size: 1.25rem;
+.content-section {
+  width: 100%;
+  max-width: 680px;
 }
 
 .card {
   background: var(--card-bg);
-  padding: 28px 20px;
-  border-radius: 16px;
+  padding: 40px 28px;
+  border-radius: 20px;
   border: 1px solid rgba(197, 160, 89, 0.25);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-navy);
+  margin-bottom: 24px;
+}
+
+.ornament {
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  margin-bottom: 12px;
 }
 
 .quote-text {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
   line-height: 1.6;
   font-style: italic;
-  color: #444;
+  color: #333;
 }
 
 .quote-source {
   display: block;
   margin-top: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.85rem;
   color: var(--accent-gold);
-  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--primary-navy);
-  margin-bottom: 20px;
+/* MEMPELAI PROFILE */
+.couple-profile {
+  margin: 18px 0;
 }
 
-.profile-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-img {
+.avatar-box {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  object-fit: cover;
+  background: #f0ebd9;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 12px auto;
   border: 2px solid var(--accent-gold);
-  margin-bottom: 12px;
 }
 
 .person-name {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
   color: var(--primary-navy);
 }
 
 .parents-info {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: 4px;
 }
 
 .and-symbol {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
   color: var(--accent-gold);
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
-.event-date {
-  font-weight: 600;
-  font-size: 1rem;
+/* ACARA & RSVP */
+.event-box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.event-box {
+  background: #fdfbf7;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.event-box h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
   color: var(--primary-navy);
 }
 
-.event-location {
+.event-box p {
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin: 6px 0 20px 0;
+  margin-top: 6px;
 }
 
-.btn-maps {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: transparent;
-  color: var(--primary-navy);
-  border: 1px solid var(--primary-navy);
-  padding: 10px 20px;
+.location-venue {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-navy);
+  color: #fff;
+  padding: 10px 24px;
   border-radius: 20px;
   text-decoration: none;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.ucapan-list {
+  text-align: left;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ucapan-card {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.ucapan-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.ucapan-text {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-top: 4px;
+}
+
+/* REKENING */
+.gift-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.rekening-card {
+  background: #fdfbf7;
+  border: 1px dashed var(--accent-gold);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.bank-title {
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.bank-number {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.bank-owner {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.btn-copy {
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 8px 16px;
+  border-radius: 20px;
   font-size: 0.8rem;
-  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.btn-maps:hover {
+/* FLOATING CONTROLS */
+.btn-music-floating {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background-color: var(--primary-navy);
-  color: #ffffff;
+  color: #fff;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+  z-index: 999;
 }
 
-/* ===================================================
-   RESPONSIVE MEDIA QUERIES (HP, TABLET & LAPTOP)
-   =================================================== */
-
-/* 1. Layar HP Sangat Kecil (iPhone SE, layar dibawah 360px) */
-@media screen and (max-width: 360px) {
-  html {
-    font-size: 14px; /* Mengecilkan ukuran font secara proporsional */
-  }
-  .card {
-    padding: 20px 14px;
-  }
-  .profile-img {
-    width: 85px;
-    height: 85px;
-  }
+.floating-navbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(27, 42, 74, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  border-radius: 30px;
+  display: flex;
+  gap: 22px;
+  z-index: 998;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* 2. Layar Tablet & iPad (768px - 1024px) */
-@media screen and (min-width: 768px) {
-  html {
-    font-size: 17px;
-  }
-  .invitation-container {
-    margin: 20px auto; /* Memberikan jarak atas & bawah agar seperti app di layar tablet */
-    border-radius: 20px;
-    overflow: hidden;
-    min-height: calc(100vh - 40px);
-  }
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  gap: 3px;
 }
 
-/* 3. Layar Laptop & Desktop PC (Diatas 1024px) */
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: 18px;
-  }
-  .invitation-container {
-    margin: 30px auto;
-    border-radius: 24px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-  }
+.nav-link i {
+  font-size: 1rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-gold);
+}
+
+.hidden {
+  display: none !important;
 }
