@@ -2,15 +2,13 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding of Teguh &amp; Galuh</title>
-    <meta name="description" content="Official Wedding Invitation Teguh &amp; Galuh">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,68 +18,67 @@
 </head>
 <body class="is-locked">
 
-    <!-- Audio Musik Undangan -->
+    <!-- Background Music -->
     <audio id="bg-music" loop preload="auto">
         <source src="Nuca_-_Masa_ini_Nanti_dan_Masa_Indah_Lainnya_(mp3.pm).mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Tombol Stop/Play Musik Floating (Muncul Setelah Buka Undangan) -->
-    <button id="btn-music-toggle" class="btn-music-floating hidden" aria-label="Toggle Audio">
+    <!-- Tombol Audio Melayang -->
+    <button id="btn-music-toggle" class="btn-music-floating hidden" aria-label="Toggle Music">
         <i class="fas fa-compact-disc fa-spin" id="music-icon"></i>
     </button>
 
-    <main class="invitation-container">
-        
-        <!-- SECTION 1: COVER UTAMA -->
-        <section id="section-cover" class="cover-section">
-            <div class="cover-content">
-                <p class="wedding-subtitle">THE WEDDING OF</p>
-                <h1 class="wedding-couples">Teguh &amp; Galuh</h1>
-                <p class="wedding-date">Minggu, 21 September 2025</p>
+    <!-- Main Web Layout Wrapper -->
+    <div class="web-wrapper">
 
-                <!-- Guest Card -->
-                <div class="guest-info">
+        <!-- LEFT SIDEBAR / COVER (Fixed di Laptop) -->
+        <aside class="cover-sidebar" id="section-cover">
+            <div class="cover-overlay"></div>
+            <div class="cover-content">
+                <p class="subtitle">THE WEDDING OF</p>
+                <h1 class="title-couples">Teguh &amp; Galuh</h1>
+                <p class="wedding-date"><i class="far fa-calendar-alt"></i> Minggu, 21 September 2025</p>
+
+                <div class="guest-card">
                     <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                     <h2 class="guest-name">Nama Tamu</h2>
                     
-                    <div class="button-wrapper">
-                        <button id="btn-open-invitation" class="btn-open">
-                            <i class="far fa-envelope-open"></i>
-                            <span>Buka Undangan</span>
-                        </button>
-                    </div>
+                    <button id="btn-open-invitation" class="btn-open">
+                        <i class="far fa-envelope-open"></i> Buka Undangan
+                    </button>
                 </div>
             </div>
-        </section>
+        </aside>
 
-        <!-- MAIN CONTENT (Satu Kolom Mengalir Smooth) -->
-        <div id="main-content" class="main-content-wrapper">
+        <!-- RIGHT CONTENT AREA (Scrollable di Laptop) -->
+        <main class="main-content" id="main-content">
 
-            <!-- SECTION 2: QUOTE / AYAT -->
+            <!-- SECTION 1: QUOTE -->
             <section id="quote" class="content-section">
-                <div class="card quote-card">
+                <div class="card card-quote">
+                    <div class="ornament">✦</div>
                     <p class="quote-text">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."</p>
                     <span class="quote-source">Ar-Rum: 21</span>
                 </div>
             </section>
 
-            <!-- SECTION 3: MEMPELAI -->
+            <!-- SECTION 2: MEMPELAI -->
             <section id="mempelai" class="content-section">
-                <div class="card couple-card">
+                <div class="card">
                     <h2 class="section-title">Mempelai Pria &amp; Wanita</h2>
-
-                    <div class="profile-box">
-                        <div class="profile-avatar">
+                    
+                    <div class="couple-profile">
+                        <div class="avatar-box">
                             <i class="fas fa-user-alt"></i>
                         </div>
                         <h3 class="person-name">Teguh Perwira Putra</h3>
                         <p class="parents-info">Putra dari Bpk. Bapak &amp; Ibu Ibu</p>
                     </div>
-                    
+
                     <div class="and-symbol">&amp;</div>
-                    
-                    <div class="profile-box">
-                        <div class="profile-avatar">
+
+                    <div class="couple-profile">
+                        <div class="avatar-box">
                             <i class="fas fa-user-alt"></i>
                         </div>
                         <h3 class="person-name">Galuh</h3>
@@ -90,85 +87,81 @@
                 </div>
             </section>
 
-            <!-- SECTION 4: ACARA & LOKASI -->
+            <!-- SECTION 3: ACARA & LOKASI -->
             <section id="acara" class="content-section">
-                <div class="card event-card">
-                    <h2 class="section-title">Waktu &amp; Tempat Acara</h2>
-                    
-                    <div class="event-details">
-                        <div class="event-item">
-                            <h3 class="event-type">Akad Nikah</h3>
-                            <p class="event-time"><i class="far fa-clock"></i> 08.00 - 10.00 WIB</p>
+                <div class="card">
+                    <h2 class="section-title">Waktu &amp; Tempat</h2>
+
+                    <div class="event-box-grid">
+                        <div class="event-box">
+                            <h3>Akad Nikah</h3>
+                            <p><i class="far fa-clock"></i> 08:00 - 10:00 WIB</p>
                         </div>
-                        <hr class="event-divider">
-                        <div class="event-item">
-                            <h3 class="event-type">Resepsi</h3>
-                            <p class="event-time"><i class="far fa-clock"></i> 11.00 - Selesai</p>
+                        <div class="event-box">
+                            <h3>Resepsi</h3>
+                            <p><i class="far fa-clock"></i> 11:00 - Selesai</p>
                         </div>
                     </div>
 
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> Minggu, 21 September 2025</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Gedung Serbaguna, Malang</p>
-                    
-                    <a href="https://maps.google.com" target="_blank" class="btn-maps">
-                        <i class="fas fa-directions"></i> Buka Buka Lokasi Google Maps
-                    </a>
+                    <div class="location-info">
+                        <p class="location-venue"><i class="fas fa-map-marker-alt"></i> Gedung Serbaguna, Malang</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn-primary">
+                            <i class="fas fa-directions"></i> Buka Google Maps
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- SECTION 5: RSVP & UCAPAN -->
+            <!-- SECTION 4: RSVP & UCAPAN -->
             <section id="rsvp" class="content-section">
-                <div class="card rsvp-card">
-                    <h2 class="section-title">Konfirmasi Kehadiran &amp; Ucapan</h2>
+                <div class="card">
+                    <h2 class="section-title">RSVP &amp; Ucapan Selamat</h2>
                     
-                    <form id="rsvp-form" class="rsvp-form">
-                        <input type="text" id="rsvp-name" placeholder="Nama Anda" required class="form-input">
-                        
-                        <select id="rsvp-status" required class="form-input">
+                    <form id="form-rsvp" class="rsvp-form">
+                        <input type="text" id="input-nama" placeholder="Nama Lengkap" required class="form-control">
+                        <select id="input-status" required class="form-control">
                             <option value="">-- Konfirmasi Kehadiran --</option>
                             <option value="Hadir">Hadir</option>
                             <option value="Tidak Hadir">Tidak Hadir</option>
                         </select>
-
-                        <textarea id="rsvp-message" placeholder="Tuliskan ucapan &amp; doa selamat..." rows="3" required class="form-input"></textarea>
-
-                        <button type="submit" class="btn-submit">Kirim Ucapan &amp; RSVP</button>
+                        <textarea id="input-pesan" placeholder="Berikan ucapan &amp; doa terbaik..." rows="3" required class="form-control"></textarea>
+                        <button type="submit" class="btn-primary btn-block">Kirim Ucapan</button>
                     </form>
 
-                    <!-- List Ucapan Tamu -->
-                    <div id="ucapan-list" class="ucapan-container">
-                        <!-- Kiriman ucapan akan muncul secara dinamis di sini -->
+                    <div id="ucapan-list" class="ucapan-list">
+                        <!-- Daftar ucapan muncul dinamis di sini -->
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION 6: DIGITAL GIFT / REKENING -->
+            <!-- SECTION 5: GIFT / REKENING -->
             <section id="rekening" class="content-section">
-                <div class="card gift-card">
+                <div class="card">
                     <h2 class="section-title">Digital Gift</h2>
-                    <p class="gift-subtitle">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Jika Anda ingin memberi hadiah, Anda dapat menggunakan rekening di bawah ini:</p>
+                    <p class="gift-desc">Doa restu Anda merupakan karunia terbesar bagi kami. Namun jika Anda ingin memberikan hadiah, dapat disalurkan melalui:</p>
 
-                    <div class="rekening-box">
-                        <p class="bank-name">BANK BCA</p>
-                        <p class="rekening-number" id="rek-bca">1234567890</p>
-                        <p class="rekening-owner">a.n. Teguh Perwira Putra</p>
-                        <button class="btn-copy" onclick="copyToClipboard('1234567890')">
+                    <div class="rekening-card">
+                        <p class="bank-title">BANK BCA</p>
+                        <p class="bank-number" id="rek-bca">1234567890</p>
+                        <p class="bank-owner">a.n. Teguh Perwira Putra</p>
+                        <button class="btn-copy" onclick="copyRekening('1234567890')">
                             <i class="far fa-copy"></i> Salin No. Rekening
                         </button>
                     </div>
                 </div>
             </section>
 
-        </div>
-    </main>
+        </main>
 
-    <!-- FLOATING BOTTOM NAVIGATION (Muncul di Tengah Bawah) -->
+    </div>
+
+    <!-- FLOATING BOTTOM NAVIGATION (Muncul setelah Buka Undangan) -->
     <nav id="floating-navbar" class="floating-navbar hidden">
-        <a href="#section-cover" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="#mempelai" class="nav-item"><i class="fas fa-heart"></i><span>Mempelai</span></a>
-        <a href="#acara" class="nav-item"><i class="fas fa-calendar-check"></i><span>Acara</span></a>
-        <a href="#rsvp" class="nav-item"><i class="fas fa-comment-dots"></i><span>RSVP</span></a>
-        <a href="#rekening" class="nav-item"><i class="fas fa-gift"></i><span>Hadiah</span></a>
+        <a href="#quote" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#mempelai" class="nav-link"><i class="fas fa-heart"></i><span>Mempelai</span></a>
+        <a href="#acara" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Acara</span></a>
+        <a href="#rsvp" class="nav-link"><i class="fas fa-comments"></i><span>RSVP</span></a>
+        <a href="#rekening" class="nav-link"><i class="fas fa-gift"></i><span>Gift</span></a>
     </nav>
 
     <!-- Custom JavaScript -->
