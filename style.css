@@ -7,6 +7,7 @@
   --text-muted: #666666;
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Montserrat', sans-serif;
+  --container-width: 480px; /* Lebar maksimal tampilan undangan */
 }
 
 * {
@@ -17,9 +18,10 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #e5e2d9;
+  background-color: #dcd8cc; /* Warna latar belakang luar di Laptop/Desktop */
   font-family: var(--font-body);
   color: var(--text-main);
+  font-size: 16px;
 }
 
 body.is-locked {
@@ -32,15 +34,19 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
+/* WAPPER UTAMA: Mengunci Tampilan Mobile Frame di Tengah Layar Laptop/Tablet */
 .invitation-container {
   width: 100%;
-  max-width: 480px;
+  max-width: var(--container-width);
   background-color: var(--bg-color);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* SECTION COVER */
@@ -73,6 +79,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .guest-info {
@@ -80,7 +87,7 @@ body {
 }
 
 .guest-label {
-  font-size: 12px;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -88,7 +95,7 @@ body {
 
 .guest-name {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   margin: 6px 0 16px 0;
   color: var(--primary-navy);
@@ -104,7 +111,7 @@ body {
   padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(27, 42, 74, 0.25);
@@ -120,7 +127,7 @@ body {
 .content-section {
   min-height: 100vh;
   width: 100%;
-  padding: 50px 20px;
+  padding: 40px 20px;
   background-color: var(--bg-color);
 }
 
@@ -133,12 +140,12 @@ body {
 
 .ornament-divider {
   color: var(--accent-gold);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .card {
   background: var(--card-bg);
-  padding: 30px 20px;
+  padding: 28px 20px;
   border-radius: 16px;
   border: 1px solid rgba(197, 160, 89, 0.25);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
@@ -146,7 +153,7 @@ body {
 
 .quote-text {
   font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 1.15rem;
   line-height: 1.6;
   font-style: italic;
   color: #444;
@@ -155,7 +162,7 @@ body {
 .quote-source {
   display: block;
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-gold);
   letter-spacing: 1px;
@@ -163,7 +170,7 @@ body {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--primary-navy);
   margin-bottom: 20px;
 }
@@ -175,8 +182,8 @@ body {
 }
 
 .profile-img {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--accent-gold);
@@ -185,31 +192,31 @@ body {
 
 .person-name {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 1.75rem;
   color: var(--primary-navy);
 }
 
 .parents-info {
-  font-size: 13px;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
 }
 
 .and-symbol {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 2rem;
   color: var(--accent-gold);
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 .event-date {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--primary-navy);
 }
 
 .event-location {
-  font-size: 14px;
+  font-size: 0.85rem;
   color: var(--text-muted);
   margin: 6px 0 20px 0;
 }
@@ -224,11 +231,54 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
 }
 
 .btn-maps:hover {
   background-color: var(--primary-navy);
   color: #ffffff;
+}
+
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES (HP, TABLET & LAPTOP)
+   =================================================== */
+
+/* 1. Layar HP Sangat Kecil (iPhone SE, layar dibawah 360px) */
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 14px; /* Mengecilkan ukuran font secara proporsional */
+  }
+  .card {
+    padding: 20px 14px;
+  }
+  .profile-img {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+/* 2. Layar Tablet & iPad (768px - 1024px) */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  .invitation-container {
+    margin: 20px auto; /* Memberikan jarak atas & bawah agar seperti app di layar tablet */
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: calc(100vh - 40px);
+  }
+}
+
+/* 3. Layar Laptop & Desktop PC (Diatas 1024px) */
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+  .invitation-container {
+    margin: 30px auto;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  }
 }
