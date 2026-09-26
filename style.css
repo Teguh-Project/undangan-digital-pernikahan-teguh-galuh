@@ -244,7 +244,18 @@ html {
     background-image: none !important;
   }
 }
+/* Menghindari lompatan kasar saat scroll dibuka */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Memastikan area clickable tombol menutupi seluruh container */
+#tombol-buka a {
+  cursor: pointer !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 @font-face{font-family:charlotte;font-style:normal;font-weight:400;font-display:fallback;src:url('https://bycativestudio.com/wp-content/uploads/useanyfont/6293charlotte.woff2') format('woff2');}
 @font-face{font-family:"Ginger Brand";font-style:normal;font-weight:400;font-display:fallback;src:url('https://bycativestudio.com/wp-content/uploads/fonts/GingerBrand.ttf') format('truetype');}
 @font-face{font-family:handwriting;font-style:normal;font-weight:500;font-display:fallback;src:url('https://bycativestudio.com/wp-content/uploads/fonts/handwriting.woff2') format('woff2');}
