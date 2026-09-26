@@ -1,115 +1,36 @@
-/* Reset Basic */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+<!-- SECTION 2: ISI UNDANGAN MANUAL -->
+<section id="buka" class="content-section">
+    <div class="content-wrapper">
+        
+        <!-- 1. Kutipan / Ayat -->
+        <div class="card quote-card">
+            <p>"Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."</p>
+            <span>Ar-Rum: 21</span>
+        </div>
 
-html {
-  scroll-behavior: smooth;
-  background-color: #e8e4d9; /* Warna latar disesuaikan */
-  font-family: sans-serif;
-}
+        <!-- 2. Profil Mempelai -->
+        <div class="card couple-card">
+            <img src="foto-hadi.jpg" alt="Hadi" class="profile-img">
+            <h3>Hadi</h3>
+            <p>Putra dari Bpk. Ahmad & Ibu Siti</p>
+            
+            <span class="and-text">&amp;</span>
+            
+            <img src="foto-regita.jpg" alt="Regita" class="profile-img">
+            <h3>Regita</h3>
+            <p>Putri dari Bpk. Budi & Ibu Nina</p>
+        </div>
 
-/* Mengunci Scroll Sebelum Tombol Diklik */
-body.is-locked {
-  overflow: hidden;
-  height: 100vh;
-}
+        <!-- 3. Detail Acara & Lokasi -->
+        <div class="card event-card">
+            <h3>Akad &amp; Resepsi</h3>
+            <p class="event-date">Minggu, 21 September 2025</p>
+            <p class="event-location">Gedung Serbaguna, Malang</p>
+            
+            <a href="https://maps.google.com" target="_blank" class="btn-maps">
+                <i class="fas fa-map-marker-alt"></i> Lihat Lokasi Google Maps
+            </a>
+        </div>
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-.invitation-container {
-  width: 100%;
-  max-width: 480px; /* Lebar standar tampilan mobile/preview */
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Section 1: Cover */
-.cover-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-
-.cover-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.cover-img, .footer-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.guest-info {
-  margin: 10px 0;
-}
-
-.guest-label {
-  font-size: 14px;
-  color: #555;
-}
-
-.guest-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 5px 0 15px 0;
-  color: #222;
-}
-
-/* Tombol Open Invitation */
-.btn-open {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #503158;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn-open:hover {
-  transform: scale(1.05);
-  background-color: #3b2342;
-}
-
-/* Section 2: Isi Video */
-.content-section {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-}
-
-.video-container {
-  width: 100%;
-  height: 100%;
-}
-
-.video-container video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    </div>
+</section>
