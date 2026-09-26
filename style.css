@@ -1,36 +1,127 @@
-<!-- SECTION 2: ISI UNDANGAN MANUAL -->
-<section id="buka" class="content-section">
-    <div class="content-wrapper">
-        
-        <!-- 1. Kutipan / Ayat -->
-        <div class="card quote-card">
-            <p>"Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."</p>
-            <span>Ar-Rum: 21</span>
-        </div>
+/* Reset Basic */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        <!-- 2. Profil Mempelai -->
-        <div class="card couple-card">
-            <img src="foto-hadi.jpg" alt="Hadi" class="profile-img">
-            <h3>Hadi</h3>
-            <p>Putra dari Bpk. Ahmad & Ibu Siti</p>
-            
-            <span class="and-text">&amp;</span>
-            
-            <img src="foto-regita.jpg" alt="Regita" class="profile-img">
-            <h3>Regita</h3>
-            <p>Putri dari Bpk. Budi & Ibu Nina</p>
-        </div>
+html {
+  scroll-behavior: smooth;
+  /* Ganti warna latar belakang utama halaman di sini */
+  background-color: #f4f1ea; /* Warna cream soft/hangat */
+  color: #2c3e50; /* Warna teks gelap yang lembut (bukan hitam pekat) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        <!-- 3. Detail Acara & Lokasi -->
-        <div class="card event-card">
-            <h3>Akad &amp; Resepsi</h3>
-            <p class="event-date">Minggu, 21 September 2025</p>
-            <p class="event-location">Gedung Serbaguna, Malang</p>
-            
-            <a href="https://maps.google.com" target="_blank" class="btn-maps">
-                <i class="fas fa-map-marker-alt"></i> Lihat Lokasi Google Maps
-            </a>
-        </div>
+/* Mengunci Scroll Sebelum Tombol Diklik */
+body.is-locked {
+  overflow: hidden;
+  height: 100vh;
+}
 
-    </div>
-</section>
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.invitation-container {
+  width: 100%;
+  max-width: 480px; /* Lebar mobile agar presisi di tengah */
+  background-color: #fcfbf7; /* Warna card utama */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section 1: Cover Utama */
+.cover-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.cover-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cover-img, .footer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.guest-info {
+  margin: 10px 0;
+}
+
+.guest-label {
+  font-size: 14px;
+  color: #666666;
+}
+
+.guest-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 6px 0 16px 0;
+  color: #1a252f;
+}
+
+/* Tombol Open Invitation */
+.btn-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2b3a4a; /* Warna tombol (Navy/Sesuai ilustrasi) */
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-open:hover {
+  transform: translateY(-2px);
+  background-color: #1d2733;
+}
+
+/* Section 2: Isi Undangan (Dibuat Terang) */
+.content-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fcfbf7; /* DIUBAH: Dari hitam (#000) menjadi cream terang */
+  color: #333333;
+}
+
+/* Styling Komponen Manual di Section Isi */
+.content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2ded4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
