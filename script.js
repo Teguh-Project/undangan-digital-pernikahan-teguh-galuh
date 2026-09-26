@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnMusicToggle = document.getElementById("btn-music-toggle");
   const musicIcon = document.getElementById("music-icon");
   const floatingNavbar = document.getElementById("floating-navbar");
-  const mainContent = document.getElementById("main-content");
   const targetSection = document.getElementById("quote");
   const formRsvp = document.getElementById("form-rsvp");
   const ucapanList = document.getElementById("ucapan-list");
@@ -14,33 +13,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // 1. Klik Buka Undangan
   if (btnOpen) {
     btnOpen.addEventListener("click", function () {
+      // Membuka kuncian scroll di body
       document.body.classList.remove("is-locked");
 
+      // Menampilkan floating navbar & tombol musik
       if (floatingNavbar) floatingNavbar.classList.remove("hidden");
       if (btnMusicToggle) btnMusicToggle.classList.remove("hidden");
 
-      // Play Audio
+      // Memutar Musik otomatis
       if (audioMusic) {
         audioMusic.play().then(() => {
           isPlaying = true;
         }).catch(err => console.log("Autoplay diblokir browser:", err));
       }
 
-      // Smooth Scroll ke konten pertama
-      if (window.innerWidth >= 992) {
-        // Pada layar Laptop (scroll di dalam div .main-content)
-        mainContent.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      } else {
-        // Pada layar HP
+      // Smooth scroll langsung ke isi undangan (Quote)
+      if (targetSection) {
         targetSection.scrollIntoView({ behavior: "smooth" });
       }
     });
   }
 
-  // 2. Play / Pause Music Toggle
+  // 2. Play / Pause Toggle Musik
   if (btnMusicToggle) {
     btnMusicToggle.addEventListener("click", function () {
       if (isPlaying) {
@@ -55,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 3. Submit Form RSVP & Ucapan
+  // 3. Form RSVP & Submit Ucapan
   if (formRsvp) {
     formRsvp.addEventListener("submit", function (e) {
       e.preventDefault();
