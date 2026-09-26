@@ -28,19 +28,18 @@
         <i class="fas fa-compact-disc fa-spin" id="music-icon"></i>
     </button>
 
-    <!-- Main Web Layout Wrapper -->
     <div class="web-wrapper">
 
-        <!-- LEFT SIDEBAR / COVER (Fixed di Laptop) -->
-        <aside class="cover-sidebar" id="section-cover">
+        <!-- COVER HERO: FULLSCREEN LAYOUT -->
+        <section class="cover-hero" id="section-cover">
             <div class="cover-overlay"></div>
             <div class="cover-content">
-                <p class="subtitle">THE WEDDING OF</p>
+                <p class="subtitle">The Wedding Of</p>
                 <h1 class="title-couples">Teguh &amp; Galuh</h1>
-                <p class="wedding-date"><i class="far fa-calendar-alt"></i> Minggu, 21 September 2025</p>
+                <p class="wedding-date">Minggu, 21 September 2025</p>
 
                 <div class="guest-card">
-                    <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <p class="guest-label">Dear</p>
                     <h2 class="guest-name">Nama Tamu</h2>
                     
                     <button id="btn-open-invitation" class="btn-open">
@@ -48,14 +47,14 @@
                     </button>
                 </div>
             </div>
-        </aside>
+        </section>
 
-        <!-- RIGHT CONTENT AREA (Scrollable di Laptop) -->
+        <!-- MAIN CONTENT AREA -->
         <main class="main-content" id="main-content">
 
             <!-- SECTION 1: QUOTE -->
             <section id="quote" class="content-section">
-                <div class="card card-quote">
+                <div class="card">
                     <div class="ornament">✦</div>
                     <p class="quote-text">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."</p>
                     <span class="quote-source">Ar-Rum: 21</span>
@@ -81,7 +80,7 @@
                         <div class="avatar-box">
                             <i class="fas fa-user-alt"></i>
                         </div>
-                        <h3 class="person-name">Galuh</h3>
+                        <h3 class="person-name">Galuh Rahmatyah Tsary</h3>
                         <p class="parents-info">Putri dari Bpk. Bapak &amp; Ibu Ibu</p>
                     </div>
                 </div>
@@ -129,7 +128,7 @@
                     </form>
 
                     <div id="ucapan-list" class="ucapan-list">
-                        <!-- Daftar ucapan muncul dinamis di sini -->
+                        <!-- Kiriman ucapan muncul dinamis di sini -->
                     </div>
                 </div>
             </section>
@@ -155,9 +154,9 @@
 
     </div>
 
-    <!-- FLOATING BOTTOM NAVIGATION (Muncul setelah Buka Undangan) -->
+    <!-- FLOATING BOTTOM NAVIGATION -->
     <nav id="floating-navbar" class="floating-navbar hidden">
-        <a href="#quote" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#section-cover" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="#mempelai" class="nav-link"><i class="fas fa-heart"></i><span>Mempelai</span></a>
         <a href="#acara" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Acara</span></a>
         <a href="#rsvp" class="nav-link"><i class="fas fa-comments"></i><span>RSVP</span></a>
