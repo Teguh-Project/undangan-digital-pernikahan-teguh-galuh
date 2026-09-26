@@ -38,8 +38,8 @@ body.is-locked {
 .cover-hero {
   width: 100%;
   height: 100vh;
-  /* Ganti URL foto di bawah dengan foto pasangan Anda */
-  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  /* Ganti nama file gambar Anda di bawah ini */
+  background: url('pexels-wedding-1846114_1920.jpg') center/cover no-repeat;
   position: relative;
   display: flex;
   justify-content: center;
@@ -47,7 +47,6 @@ body.is-locked {
   text-align: center;
   color: #ffffff;
 }
-
 /* Layer gelap transparan agar teks terbaca jelas di atas gambar */
 .cover-overlay {
   position: absolute;
