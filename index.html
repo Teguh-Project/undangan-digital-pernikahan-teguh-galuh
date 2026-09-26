@@ -6,8 +6,13 @@
     
     <!-- SEO & Metadata -->
     <title>Teguh &amp; Galuh - Wedding Invitation</title>
-    <meta name="description" content="The Wedding of Hadi &amp; Regita - Invitation">
+    <meta name="description" content="The Wedding of Teguh &amp; Galuh - Invitation">
     
+    <!-- Google Fonts untuk Aksesibilitas Tipografi Mewah -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
@@ -15,6 +20,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="is-locked">
+
+    <!-- Audio Musik Undangan -->
+    <audio id="bg-music" loop preload="auto">
+        <!-- Ganti URL MP3 berikut dengan file lagu/audio lokal atau URL musik pilihan Anda -->
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
 
     <main class="invitation-container">
         
@@ -25,20 +36,20 @@
                 <!-- Gambar Utama Cover -->
                 <div class="cover-image-wrapper">
                     <img src="https://bycativestudio.com/wp-content/uploads/2026/06/Cover-Sketch-Navy-Hadi-Regita-812x1024.png" 
-                         alt="Welcome to The Wedding of Hadi and Regita" 
+                         alt="Welcome to The Wedding of Teguh and Galuh" 
                          class="cover-img">
                 </div>
 
                 <!-- Informasi Tamu Undangan -->
                 <div class="guest-info">
-                    <p class="guest-label">Yth: Bpk/Ibu/Saudara/i</p>
+                    <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                     <h2 class="guest-name">Nama Tamu</h2>
                     
                     <!-- Tombol Buka Undangan -->
                     <div id="tombol-buka" class="button-wrapper">
                         <a href="#buka" class="btn-open">
                             <i class="far fa-envelope-open"></i>
-                            <span>Open Invitation</span>
+                            <span>Buka Undangan</span>
                         </a>
                     </div>
                 </div>
@@ -46,7 +57,7 @@
                 <!-- Banner/Tanggal di Bawah Cover -->
                 <div class="cover-footer-wrapper">
                     <img src="https://bycativestudio.com/wp-content/uploads/2026/06/IMG_8386-1-1024x246.png" 
-                         alt="21 September 2025" 
+                         alt="Tanggal Acara" 
                          class="footer-img">
                 </div>
 
@@ -54,41 +65,49 @@
         </section>
 
         <!-- SECTION 2: ISI UNDANGAN MANUAL -->
-<section id="buka" class="content-section">
-    <div class="content-wrapper">
-        
-        <!-- 1. Kutipan / Ayat -->
-        <div class="card quote-card">
-            <p>"Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."</p>
-            <span>Ar-Rum: 21</span>
-        </div>
+        <section id="buka" class="content-section">
+            <div class="content-wrapper">
+                
+                <div class="ornament-divider">✦</div>
 
-        <!-- 2. Profil Mempelai -->
-        <div class="card couple-card">
-            <img src="foto-hadi.jpg" alt="Hadi" class="profile-img">
-            <h3>Hadi</h3>
-            <p>Putra dari Bpk. Ahmad & Ibu Siti</p>
-            
-            <span class="and-text">&amp;</span>
-            
-            <img src="foto-regita.jpg" alt="Regita" class="profile-img">
-            <h3>Regita</h3>
-            <p>Putri dari Bpk. Budi & Ibu Nina</p>
-        </div>
+                <!-- 1. Kutipan / Ayat -->
+                <div class="card quote-card">
+                    <p class="quote-text">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."</p>
+                    <span class="quote-source">Ar-Rum: 21</span>
+                </div>
 
-        <!-- 3. Detail Acara & Lokasi -->
-        <div class="card event-card">
-            <h3>Akad &amp; Resepsi</h3>
-            <p class="event-date">Minggu, 21 September 2025</p>
-            <p class="event-location">Gedung Serbaguna, Malang</p>
-            
-            <a href="https://maps.google.com" target="_blank" class="btn-maps">
-                <i class="fas fa-map-marker-alt"></i> Lihat Lokasi Google Maps
-            </a>
-        </div>
+                <!-- 2. Profil Mempelai -->
+                <div class="card couple-card">
+                    <h3 class="section-title">Mempelai Pria &amp; Wanita</h3>
 
-    </div>
-</section>
+                    <div class="profile-box">
+                        <img src="foto-teguh.jpg" alt="Teguh" class="profile-img">
+                        <h2 class="person-name">Teguh</h2>
+                        <p class="parents-info">Putra dari Bpk. Bapak &amp; Ibu Ibu</p>
+                    </div>
+                    
+                    <div class="and-symbol">&amp;</div>
+                    
+                    <div class="profile-box">
+                        <img src="foto-galuh.jpg" alt="Galuh" class="profile-img">
+                        <h2 class="person-name">Galuh</h2>
+                        <p class="parents-info">Putri dari Bpk. Bapak &amp; Ibu Ibu</p>
+                    </div>
+                </div>
+
+                <!-- 3. Detail Acara & Lokasi -->
+                <div class="card event-card">
+                    <h3 class="section-title">Waktu &amp; Tempat</h3>
+                    <p class="event-date">Minggu, 21 September 2025</p>
+                    <p class="event-location">Gedung Serbaguna, Malang</p>
+                    
+                    <a href="https://maps.google.com" target="_blank" class="btn-maps">
+                        <i class="fas fa-map-marker-alt"></i> Lihat Lokasi Google Maps
+                    </a>
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
