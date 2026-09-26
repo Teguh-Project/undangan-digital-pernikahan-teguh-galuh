@@ -71,7 +71,7 @@
                             <i class="fas fa-user-alt"></i>
                         </div>
                         <h3 class="person-name">Teguh Perwira Putra</h3>
-                        <p class="parents-info">Putra dari Bpk. Bapak &amp; Ibu Ibu</p>
+                        <p class="parents-info">Putra dari Bpk. Moch Pahala &amp; Ibu Yuning</p>
                     </div>
 
                     <div class="and-symbol">&amp;</div>
@@ -81,7 +81,36 @@
                             <i class="fas fa-user-alt"></i>
                         </div>
                         <h3 class="person-name">Galuh Rahmatyah Tsary</h3>
-                        <p class="parents-info">Putri dari Bpk. Bapak &amp; Ibu Ibu</p>
+                        <p class="parents-info">Putri dari Bpk. Noor Ichwan &amp; Ibu Feni</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION GALLERY -->
+            <section id="gallery" class="content-section">
+                <div class="card">
+                    <h2 class="section-title">Our Moments</h2>
+                    <p class="gallery-subtitle">Momen bahagia yang kami abadikan bersama</p>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Moment 1" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Moment 2" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Moment 3" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Moment 4" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80" alt="Moment 5" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Moment 6" onclick="openLightbox(this.src)">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -158,10 +187,16 @@
     <nav id="floating-navbar" class="floating-navbar hidden">
         <a href="#section-cover" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="#mempelai" class="nav-link"><i class="fas fa-heart"></i><span>Mempelai</span></a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i><span>Galeri</span></a>
         <a href="#acara" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Acara</span></a>
         <a href="#rsvp" class="nav-link"><i class="fas fa-comments"></i><span>RSVP</span></a>
         <a href="#rekening" class="nav-link"><i class="fas fa-gift"></i><span>Gift</span></a>
     </nav>
+    <!-- LIGHTBOX MODAL UNTUK PERBESAR FOTO -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
