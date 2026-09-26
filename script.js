@@ -77,3 +77,19 @@ function copyRekening(nomor) {
     alert("Nomor rekening berhasil disalin!");
   });
 }
+// 5. Lightbox / Modal Foto Gallery
+function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = src;
+    lightbox.style.display = "flex";
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    lightbox.style.display = "none";
+  }
+}
