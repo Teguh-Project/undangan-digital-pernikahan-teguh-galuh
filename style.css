@@ -480,3 +480,21 @@ body.is-locked {
     gap: 16px;
   }
 }
+/* STYLING FOTO MEMPELAI */
+.avatar-box {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 12px auto;
+  border: 3px solid var(--accent-gold);
+  overflow: hidden; /* Memastikan foto tidak keluar dari lingkaran */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menjaga rasio foto tetap proporsional */
+  object-position: center;
+  display: block;
+}
